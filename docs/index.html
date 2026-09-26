@@ -6,7 +6,45 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="img/Morris.jpg" type="image/x-icon">
   <link rel="stylesheet" href="css/main.bundle.css">
+  <!--<script src="https://kit.fontawesome.com/4e5a72c756.js"></script>-->
   <script src="https://kit.fontawesome.com/4e5a72c756.js"></script>
+    <style>
+        .diploma-stack {
+            position: relative;
+            width: 100%;
+            cursor: pointer;
+        }
+
+        .diploma-stack .diploma-page {
+            width: 100%;
+            display: block;
+            transition: transform 0.45s ease, opacity 0.45s ease;
+        }
+
+        .diploma-stack .diploma-page:not(:first-child) {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .diploma-stack .diploma-page:nth-child(1) {
+            z-index: 3;
+            transform: translateX(0);
+        }
+
+        .diploma-stack .diploma-page:nth-child(2) {
+            z-index: 2;
+            transform: translateX(6px);
+        }
+
+        .diploma-stack .diploma-page:nth-child(3) {
+            z-index: 1;
+            transform: translateX(12px);
+        }
+    </style>
+
+</head>
+
 </head>
 
 <body>
@@ -50,7 +88,7 @@
               MSci Computer Science Artificial Intelligence student @ RHUL
             </h2>
             <p>
-              <a href="docs/phd_cv.pdf" class="icon has-text-light">
+              <a href="docs/MorrisSardoCV.pdf" class="icon has-text-light">
                 <i class="fas fa-solid fa-file-pdf"></i><strong>Resume</strong>
               </a>
             </p>
@@ -419,7 +457,7 @@
                         <p class="title is-4">Graduation Diploma</p>
 
                         <img
-                            src="img/gradiationDiploma.jpg"
+                            src="img/degreesCertificate.jpg"
                             alt="gradiation Certificate"
                         >
                     </div>
@@ -442,6 +480,62 @@
             <div class="column is-6">
                 <div class="card certificate-card">
                     <div class="card-content">
+                        <p class="title is-4">GCSE Mathematics</p>
+
+                        <img
+                            src="img/GCSE_maths.jpg"
+                            alt="MATLAB Onramp Ceritificate"
+                        >
+                    </div>
+                </div>
+            </div>
+            <!---->
+             <!-- <div class="column is-6">
+                <div class="card certificate-card">
+                    <div class="card-content">
+                        <p class="title is-4">HE Diploma Engineering</p>
+
+                        <img
+                            src="img/HE_Diploma_page-0001.jpg"
+                            alt="HE Diploma"
+                        >
+                    </div>
+                </div>
+            </div> -->
+            <div class="column is-6">
+              <div class="card certificate-card">
+                <div class="card-content">
+                    <p class="title is-4">HE Diploma Engineering</p>
+                    <p class="diploma-hint">
+                        Click the diploma to view all pages and grades
+                    </p>
+                    <div class="diploma-stack" id="diplomaStack">
+                        <img
+                            src="img/HE_Diploma_page-0001.jpg"
+                            alt="Access to HE Diploma - Page 1"
+                            class="diploma-page page-1"
+                        >
+
+                        <img
+                            src="img/HE_Diploma_page-0002.jpg"
+                            alt="Access to HE Diploma - Page 2"
+                            class="diploma-page page-2"
+                        >
+
+                        <img
+                            src="img/HE_Diploma_page-0003.jpg"
+                            alt="Access to HE Diploma - Page 3"
+                            class="diploma-page page-3"
+                        >
+                    </div>
+                  </div>
+                </div>
+              </div>
+          <!---->
+          <!---->
+          <div class="column is-6">
+                <div class="card certificate-card">
+                    <div class="card-content">
                         <p class="title is-4">MATLAB Certificate</p>
 
                         <img
@@ -451,6 +545,20 @@
                     </div>
                 </div>
             </div>
+            <!---->
+             <!-- <div class="column is-6">
+                <div class="card certificate-card">
+                    <div class="card-content">
+                        <p class="title is-4">HE Diploma Engineering</p>
+
+                        <img
+                            src="img/HE_Diploma_page-0001.jpg"
+                            alt="MATLAB Onramp Ceritificate"
+                        >
+                    </div>
+                </div>
+            </div> -->
+          <!---->
 
         </div>
     </div>
@@ -774,6 +882,14 @@
   </div>
 
   <script src="js/bundle.js"></script>
+  <script>
+    const diplomaStack = document.getElementById("diplomaStack");
+
+    diplomaStack.addEventListener("click", function () {
+        const firstPage = diplomaStack.querySelector(".diploma-page");
+        diplomaStack.appendChild(firstPage);
+    });
+    </script>
 </body>
 
 </html>
